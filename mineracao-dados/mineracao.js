@@ -19,7 +19,7 @@ function minerarDados(){
     }
 }
 
-// Adiciona na card view o suporte da relação do produto x e y
+// Adiciona na card view o suporte ou confiança da relação do produto x e y
 function addInfoOnCard(productX, productY, value, type){
     var card = $("#" + type + productX);
     if($(card).find('li#li' + productY).length === 0){
