@@ -1,3 +1,4 @@
+var totalVerificacoes = 0;
 // Função para calcular suporte e confiança das relações de um produto
 function minerarDados(){
     var products = $("#products").find('td');
@@ -45,7 +46,7 @@ function getConfianca(x, y, transactions){
     var confianca = 0;
     var registerWithX = 0;
     for(var cont = 0; cont < transactions.length; cont++){
-        var produtos = $(transactions[cont]).find('td');
+        var produtos = $(transactions[cont]).find('td'); // Produtos de uma transação
         if($(produtos[x]).attr('value') === '1'){
             registerWithX++;
             if($(produtos[y]).attr('value') === '1')
