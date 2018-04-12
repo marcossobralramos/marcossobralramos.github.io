@@ -51,10 +51,5 @@ function getConfianca(x, y, transactions){
                 confianca++;
         }
     }
-<<<<<<< HEAD
     return (registerWithX == 0) ? 0.00 : (confianca / registerWithX).toFixed(2)
 }
-=======
-    return (registerWithX === 0) ? 0 : (confianca / registerWithX).toFixed(2)
-}
->>>>>>> cee668490c5e6ea05a7e1fcf70f6e1e6e4f06662
