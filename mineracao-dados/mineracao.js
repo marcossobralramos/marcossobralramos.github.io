@@ -1,4 +1,3 @@
-var totalVerificacoes = 0;
 // Função para calcular suporte e confiança das relações de um produto
 function minerarDados(){
     var products = $("#products").find('td');
@@ -26,8 +25,7 @@ function addInfoOnCard(productX, productY, value, type){
         var li = '<li id="li' + productY + '">' + productY + ': ' + value + '</li>';
         $(card).append(li);
     }else
-        $("li#li" + productY).html(productY + ': ' + value);
-        
+        $(card).find("li#li" + productY).html(productY + ': ' + value);
 }
 
 // Calcula o suporte de dois produtos em todas transações (x => y)
@@ -38,7 +36,7 @@ function getSuporte(x, y, transactions){
         if($(produtos[x]).attr('value') === '1' && $(produtos[y]).attr('value') === '1')
             suporte++;
     }
-    return (transactions.length === 0) ? 0 : (suporte / transactions.length).toFixed(2);
+    return (transactions.length == 0) ? 0.00 : (suporte / transactions.length).toFixed(2);
 }
 
 // Calcula o suporte de dois produtos em todas transações (x => y)
@@ -53,5 +51,5 @@ function getConfianca(x, y, transactions){
                 confianca++;
         }
     }
-    return (registerWithX === 0) ? 0 : (confianca / registerWithX).toFixed(2)
+    return (registerWithX == 0) ? 0.00 : (confianca / registerWithX).toFixed(2)
 }
